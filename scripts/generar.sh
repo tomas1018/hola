@@ -6,7 +6,7 @@ nombres=($(cat "../nombres.txt"))
 for ((i=0; i<$cantidad; i++)); do
   nombre=${nombres[$RANDOM % ${#nombres[@]}]}
   wget "https://thispersondoesnotexist.com/" -O "../imagenes/$nombre.jpg"
-  sleep 2
+  sleep 1
 done
 
 tar zcvf imagenes.tar.gz "../imagenes"
