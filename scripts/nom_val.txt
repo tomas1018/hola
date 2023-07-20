@@ -1,7 +1,1 @@
-Alcides,4955
-Angel
-Antonio
-Benjamin,3077
-Ester,253
-Josefina,1000
-Maximo,307
+Andrés,4359

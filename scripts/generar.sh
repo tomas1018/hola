@@ -1,19 +1,23 @@
 #!/bin/bash
-cantidad=$1
-wget -O "../nombres.txt" "https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv" 
-mkdir -p "../imagenes"
-nombres=($(cat "../nombres.txt"))
+CANTIDAD=$1
+if (( $CANTIDAD > 0 )); then
 
-for ((i=0; i<$cantidad; i++)); do
-  nombre=${nombres[$RANDOM % ${#nombres[@]}]}
-  wget "https://thispersondoesnotexist.com/" -O "../imagenes/$nombre.jpg"
-  sleep 1
-done
+   wget -O "../nombres.txt" "https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv" 
+   mkdir -p "../imagenes"
+   NOMBRES=($(cat "../nombres.txt"))
 
-tar zcvf imagenes.tar.gz "../imagenes"
+   for ((i=0; i<$CANTIDAD; i++)); do
+     NOMBRE=${NOMBRES[$RANDOM % ${#NOMBRES[@]}]}
+     wget "https://thispersondoesnotexist.com/" -O "../imagenes/$NOMBRE.jpg"
+     sleep 1
+   done
 
-md5sum imagenes.tar.gz > "../verificacion.txt"
+   tar zcvf imagenes.tar.gz "../imagenes"
 
+   md5sum imagenes.tar.gz > "../verificacion.txt"
+else
+   echo "El caracter ingresado no es numero o no es valido"
+fi
 exit 0
 
 

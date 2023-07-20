@@ -1,15 +1,29 @@
 #!/bin/bash
-imagenes_desc="./imagenes"
+if [ ! -d ../imagenes ]; then
+   echo "Todavia no generaste imagenes"
 
-mkdir -p "../imagenes_reducidas"
+elif [ ! -d ./imagenes ] ; then
+   echo "Todavia no Descomprimiste los archivos"
 
-for img in "$imagenes_desc"/*.jpg; do
-   nombre_arch=$(basename "$img")
-   nombre=${nombre_arch%.*}
+else
+   IMAGENES_DESC="./imagenes"
 
-   if [[ $nombre =~ ^[A-Z][a-z]+,?[0-9]* ]] ;then
-      convert "$img" -gravity center -resize 512x512+0+0 -extent 512x512 "../imagenes_reducidas/$nombre.jpg"
-      echo $nombre
+   mkdir -p "../imagenes_reducidas"
+
+
+   for IMG in "$IMAGENES_DESC"/*.jpg; do
+      NOMBRE_ARCH=$(basename "$IMG")
+      NOMBRE=${NOMBRE_ARCH%.*}
+
+      if [[ $NOMBRE =~ ^[A-Z][a-z]+,?[0-9]* ]] ;then
+         convert "$IMG" -gravity center -resize 512x512+0+0 -extent 512x512 "../imagenes_reducidas/$NOMBRE.jpg"
+         echo $NOMBRE
+      fi
+
+   done
+
+   if [ -z "../imagenes_reducidas" ]; then
+      echo "No se encontraron nombres validos"
    fi
-
-done
+fi
+exit 0

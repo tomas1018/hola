@@ -1,15 +1,14 @@
 #!/bin/bash
 
-arch_imagenes=$1
-verificacion_2=$2
+ARCH_IMAGENES=$1
+VERIFICACION_2=$2
 
-if [ -e "$arch_imagenes" ]; then
-   resultado=$(md5sum -c "$verificacion_2")
-   verificacion_total=$?
-   echo $resultado
-   echo $verificacion_total
+if [ -e "$ARCH_IMAGENES" ]; then
+   RESULTADO=$(md5sum -c "$VERIFICACION_2")
+   VERIFICACION_TOTAL=$?
+   echo $RESULTADO
 
-   if [ $verificacion_total -eq 0 ] ; then
+   if [ $VERIFICACION_TOTAL -eq 0 ] ; then
        tar xvf "imagenes.tar.gz"
    else
       echo "Error, la suma de verificaciones es incorrecta"
@@ -17,3 +16,4 @@ if [ -e "$arch_imagenes" ]; then
 else
    echo "Error, el archivo ingreso no corrresponde o no existe"
 fi
+exit 0
