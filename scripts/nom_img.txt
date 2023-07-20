@@ -1,6 +1,2 @@
-Andrés,4359
-ayelen
-beatriz
-bernardo,111
-ceferino,75
-mailén,87
+Aldo
+antonia
