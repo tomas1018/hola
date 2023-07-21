@@ -1,5 +1,6 @@
 #!/bin/bash
 # Recibe un numero entero 
+pwd
 CANTIDAD=$1
 # Verifica si es numero valido
 if (( $CANTIDAD > 0 )); then
@@ -8,7 +9,7 @@ if (( $CANTIDAD > 0 )); then
    mkdir -p "../imagenes"
    NOMBRES=($(cat "../nombres.txt"))
    
-   # Crea x cantidad de imjagines
+   # Crea x cantidad de imagenes
    for ((i=0; i<$CANTIDAD; i++)); do
      # Elije un nombre al azar del archivo nombres.txt
      NOMBRE=${NOMBRES[$RANDOM % ${#NOMBRES[@]}]}

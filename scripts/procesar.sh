@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Realiza las verificaciones de los archivos si existen.
-
+pwd
 if [ ! -d ../imagenes ]; then
    echo "Todavia no generaste imagenes"
 

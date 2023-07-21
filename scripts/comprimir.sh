@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Realiza las verificaciones de los archivos si existen o si estan vacios.
+pwd
 
 if [ ! -d ../imagenes ] || [ -z ../imagenes ]; then 
    echo "Todavia no generaste imagenes o la carpeta se encuentra vacia"

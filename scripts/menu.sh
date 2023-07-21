@@ -4,11 +4,14 @@ select opcion in Generar Descomprimir Procesar Comprimir Salir
 do
    case  $opcion in
       "Generar")
+         
          echo "Ingrese el numero de imagenes que desea generar"
-         read numero
-         ./generar.sh $numero
+         read NUMERO
+         pwd
+         ./generar.sh $NUMERO
          ;;
       "Descomprimir")
+      	 pwd
          echo "Ingrese la carpeta que quiere descomprimir (Recomendacion: ./imagenes.tar.gz"
  	 read arch_tar_gz
          echo "Ingrese el archivo con la suma de verificacion (Recomendacion: ../verificacion.txt)"
@@ -16,6 +19,7 @@ do
 	 ./descomprimir.sh $arch_tar_gz $verificacion
          ;;
       "Procesar")
+      	 pwd
 	 ./procesar.sh
 	 ;;
       "Comprimir")

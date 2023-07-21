@@ -1,5 +1,6 @@
 #!/bin/bash
 # Recibe un archivo con las imagenes generadas
+pwd
 ARCH_IMAGENES=$1
 # Recibe un archivo con las suma de verificaciones
 VERIFICACION_2=$2
