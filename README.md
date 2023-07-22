@@ -40,8 +40,7 @@ Ejecutar el Contenedor
 Ahora, puedes ejecutar el contenedor utilizando el siguiente comando:
 
 
-    docker run -v arch_comprimido: tu_ruta_correspondiente/volumen -it tp_entorno
-tu_ruta_correspondiente= la ruta donde se guardo el contenedor
+   docker run -v arch_comprimido:/tp-entorno/scripts/ -it tp_entorno
 
 Una vez ejecutado el contenedor se procedera a descargar automaticamente todo lo necesario para el funcionamiento del mismo.
 
