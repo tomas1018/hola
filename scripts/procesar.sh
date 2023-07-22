@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Realiza las verificaciones de los archivos si existen.
-pwd
 if [ ! -d ../imagenes ]; then
    echo "Todavia no generaste imagenes"
 
@@ -9,6 +8,7 @@ elif [ ! -d ./imagenes ] ; then
    echo "Todavia no Descomprimiste los archivos"
 
 else
+  
    IMAGENES_DESC="./imagenes"
 
    mkdir -p "../imagenes_reducidas"
@@ -24,7 +24,7 @@ else
       if [[ $NOMBRE =~ ^[A-Z][a-z]+,?[0-9]* ]] ;then
          # Realiza la convercion de las imagenes a 512x512  las guarda en imagenes_reducidas
          convert "$IMG" -gravity center -resize 512x512+0+0 -extent 512x512 "../imagenes_reducidas/$NOMBRE.jpg"
-         echo $NOMBRE
+         echo "cumple los requisitos $NOMBRE"
       fi
 
    done

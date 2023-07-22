@@ -1,6 +1,5 @@
 #!/bin/bash
 # Recibe un numero entero 
-pwd
 CANTIDAD=$1
 # Verifica si es numero valido
 if (( $CANTIDAD > 0 )); then
